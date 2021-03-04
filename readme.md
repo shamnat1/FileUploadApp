@@ -50,7 +50,18 @@ upload CSV and XML file and uploaded file history will be displayed .
 
 ## Web hook
  Every time a row gets updated or created it will call a web hook in pipedream.com 
+To implement this my sql connection you have to enable binary logging
 
+
+```
+[mysqld]
+log-bin=bin.log
+log-bin-index=bin-log.index
+max_binlog_size=100M
+binlog_format=row
+socket=mysql.sock
+server-id=1
+```
 
 ## Testing
 
